@@ -4,6 +4,23 @@ import { MongoDBAdapter } from '@next-auth/mongodb-adapter';
 import clientPromise from './mongodb';
 import { UserService } from './userService';
 
+// Validate required environment variables
+const requiredEnvVars = {
+  NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
+  NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+  MONGODB_URI: process.env.MONGODB_URI,
+};
+
+// Check for missing environment variables
+const missingVars = Object.entries(requiredEnvVars)
+  .filter(([_, value]) => !value)
+  .map(([key]) => key);
+
+if (missingVars.length > 0) {
+  console.error(' Missing required environment variables:', missingVars);
+  throw new Error(`Missing required environment variables: ${missingVars.join(', ')}`);
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const authOptions: any = {
   adapter: MongoDBAdapter(clientPromise),
