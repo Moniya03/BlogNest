@@ -83,26 +83,6 @@ src/
 └── types/                 # TypeScript definitions
 ```
 
-## 🔌 API Endpoints
-
-### Posts
-- `GET /api/posts` - Fetch posts with filtering and pagination
-- `POST /api/posts` - Create new post
-- `GET /api/posts/[id]` - Get specific post
-- `PUT /api/posts/[id]` - Update post
-- `DELETE /api/posts/[id]` - Delete post
-- `POST /api/posts/[id]/view` - Increment view count
-
-### Comments
-- `GET /api/posts/[id]/comments` - Get post comments
-- `POST /api/posts/[id]/comments` - Create comment
-
-### Authentication
-- NextAuth.js handles all auth routes automatically
-- Protected routes with role-based access control
-
-### Image Upload
-- `POST /api/upload` - Upload images to Cloudinary
 
 ## 🎯 Key Features
 
@@ -131,43 +111,3 @@ src/
 - Dark/light theme toggle
 - Optimized for all screen sizes
 
-## 🚀 Development
-
-### Scripts
-- `npm run dev` - Development server
-- `npm run build` - Production build
-- `npm run start` - Production server
-- `npm run lint` - Code linting
-
-### Code Quality
-- TypeScript for type safety
-- ESLint for code standards
-- Tailwind CSS for styling
-- Component-based architecture
-
-## 🌐 Deployment
-
-### Vercel (Recommended)
-1. Connect GitHub repository
-2. Set environment variables
-3. Automatic deployment on push
-
-### Other Platforms
-- Ensure MongoDB connection
-- Set production environment variables
-- Build and start application
-
-## 📄 License
-
-MIT License - see LICENSE file for details.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch
-3. Make changes
-4. Submit pull request
-
----
-
-**Built with ❤️ using Next.js 15, TypeScript, and Tailwind CSS**
