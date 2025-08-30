@@ -33,6 +33,7 @@ export interface User {
 export class UserService {
   private static async getCollection() {
     try {
+      const { default: clientPromise } = await import('./mongodb');
       const client = await clientPromise;
       const db = client.db('blognest');
       return db.collection<UserDocument>('users');
@@ -210,7 +211,4 @@ export class UserService {
       }
     );
   }
-}
-
-// Import clientPromise at the end to avoid circular dependency
-import clientPromise from './mongodb'; 
+} 
